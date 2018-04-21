@@ -23,7 +23,7 @@ SELECT last_name, job_id, salary FROM Employees
     AND salary NOT IN (4000,10000,15000);
 
 SELECT last_name FROM Employees 
-	WHERE first_name LIKE '%%%%%%';
+	WHERE first_name LIKE '______';
 
 SELECT last_name FROM Employees 
 	WHERE last_name LIKE '__e%';
