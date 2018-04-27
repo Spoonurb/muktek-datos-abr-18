@@ -1,0 +1,28 @@
+Assignment 2
+
+CREATE TABLE students(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(30) NOT NULL,
+	program VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE courses(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	credits INT NOT NULL
+);
+
+CREATE TABLE professors(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(30) NOT NULL,
+	degree VARCHAR(30),
+	courses_id INT NOT NULL,
+	FOREIGN KEY (courses_id) REFERENCES courses(id)
+);
+
+CREATE TABLE IF NOT EXISTS students_courses(
+	student_id VARCHAR(30) NOT NULL,
+	course_id VARCHAR(30) NOT NULL,
+	FOREIGN KEY (students_id) REFERENCES students(id)
+	FOREIGN KEY (courses_id) REFERENCES courses(id)
+);
